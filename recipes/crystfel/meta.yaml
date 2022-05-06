@@ -16,6 +16,8 @@ source:
   url: https://gitlab.desy.de/thomas.white/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.bz2
   sha256: 035115423778a3849ccadaeadf23487480e625fda92df9dc5f26d4bc1905e636
   folder: crystfel
+  patches:
+    - 0001_patch_ccp4_source.patch
 
 build:
   skip: true  # [win or osx]
@@ -28,10 +30,14 @@ requirements:
     - ninja
     - cmake
     - pkg-config
+    - flex
+    - bison
   host:
     - gsl
     - hdf5
     - eigen
+    - msgpack-c
+    - zlib
 
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
