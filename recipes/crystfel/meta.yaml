@@ -26,9 +26,10 @@ requirements:
     - {{ compiler('cxx') }}
     - meson
     - ninja
-    - gsl
     - cmake
     - pkg-config
+  host:
+    - gsl
 
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
