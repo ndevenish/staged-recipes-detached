@@ -6,7 +6,7 @@
 # Using the name variable with the URL in line 14 is convenient
 # when copying and pasting from another recipe, but not really needed.
 {% set name = "crystfel" %}
-{% set version = "1.10.1" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
