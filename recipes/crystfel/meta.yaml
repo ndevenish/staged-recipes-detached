@@ -18,6 +18,7 @@ source:
   folder: crystfel
 
 build:
+  skip: true  # [win or osx]
   number: 0
 
 requirements:
