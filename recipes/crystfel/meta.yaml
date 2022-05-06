@@ -1,0 +1,67 @@
+# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
+# If your package is python based, we recommend using Grayskull to generate it instead:
+# https://github.com/conda-incubator/grayskull
+
+# Jinja variables help maintain the recipe as you'll update the version only here.
+# Using the name variable with the URL in line 14 is convenient
+# when copying and pasting from another recipe, but not really needed.
+{% set name = "crystfel" %}
+{% set version = "1.10.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://gitlab.desy.de/thomas.white/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.bz2
+  sha256: 035115423778a3849ccadaeadf23487480e625fda92df9dc5f26d4bc1905e636
+  folder: crystfel
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - meson
+    - ninja
+
+# test:
+#   # Some packages might need a `test/commands` key to check CLI.
+#   # List all the packages/modules that `run_test.py` imports.
+#   imports:
+#     - simplejson
+#     - simplejson.tests
+#   # For python packages, it is useful to run pip check. However, sometimes the
+#   # metadata used by pip is out of date. Thus this section is optional if it is
+#   # failing.
+#   requires:
+#     - pip
+#   commands:
+#     - pip check
+
+about:
+  home: https://www.desy.de/~twhite/crystfel/
+  summary: 'Data processing for serial crystallography'
+  description: |
+    CrystFEL is a suite of programs for processing (and simulating) Bragg
+    diffraction data from "serial crystallography" experiments, often (but
+    not always) performed using an X-ray Free-Electron Laser.  Compared to
+    rotation data, some of the particular characteristics of such data which
+    call for a specialised software suite are:
+
+    - The sliced, rather than integrated, measurement of intensity data.
+      Many, if not all reflections are partially integrated.
+    - Many patterns (thousands) are required - high throughput is needed.
+    - The crystal orientations in each pattern are random and uncorrelated.
+    - Merging into lower symmetry point groups may require the resolution
+      of indexing ambiguities.
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: crystfel/COPYING
+  dev_url: https://gitlab.desy.de/thomas.white/crystfel
+
+
+extra:
+  recipe-maintainers:
+    - ndevenish
