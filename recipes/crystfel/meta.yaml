@@ -31,6 +31,7 @@ requirements:
   host:
     - gsl
     - hdf5
+    - eigen
 
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
