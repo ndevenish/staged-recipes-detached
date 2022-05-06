@@ -2,6 +2,6 @@
 
 set -x
 
-mkdir _build
-cd _build
-meson setup build ../crystfel --prefix "${PREFIX}"
+export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig/:$PKG_CONFIG_PATH"
+
+meson setup _build ../crystfel --prefix "${PREFIX}"
