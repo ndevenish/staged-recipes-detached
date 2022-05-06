@@ -30,6 +30,7 @@ requirements:
     - pkg-config
   host:
     - gsl
+    - hdf5
 
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
