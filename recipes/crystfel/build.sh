@@ -4,7 +4,8 @@ set -x
 
 # export PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig/:$PKG_CONFIG_PATH"
 
-meson setup _build crystfel --prefix "${PREFIX}" || true
+meson setup _build crystfel --prefix "${PREFIX}" || cat _build/meson-logs/meson-log.txt
 
-cat _build/meson-logs/meson-log.txt
-exit 1
+cd _build
+ninja
+ninja install
