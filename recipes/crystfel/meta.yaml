@@ -36,9 +36,12 @@ requirements:
     - gsl
     - hdf5
     - eigen
+    - fftw
     - msgpack-c
     - zlib
-
+  run:
+    - msgpack-c
+ 
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
 #   # List all the packages/modules that `run_test.py` imports.
