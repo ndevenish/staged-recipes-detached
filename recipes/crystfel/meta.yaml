@@ -12,7 +12,6 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
-https://gitlab.desy.de/thomas.white/crystfel/-/archive/0.10.1/crystfel-0.10.1.tar.bz2
 source:
   url: https://gitlab.desy.de/thomas.white/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.bz2
   sha256: 035115423778a3849ccadaeadf23487480e625fda92df9dc5f26d4bc1905e636
