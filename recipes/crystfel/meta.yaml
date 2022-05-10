@@ -12,6 +12,7 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
+https://gitlab.desy.de/thomas.white/crystfel/-/archive/0.10.1/crystfel-0.10.1.tar.bz2
 source:
   url: https://gitlab.desy.de/thomas.white/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.bz2
   sha256: 035115423778a3849ccadaeadf23487480e625fda92df9dc5f26d4bc1905e636
@@ -40,8 +41,14 @@ requirements:
     - msgpack-c
     - zlib
   run:
+    - gsl
+    - hdf5
+    - eigen
+    - fftw
     - msgpack-c
- 
+    - zlib
+    - msgpack-c
+
 # test:
 #   # Some packages might need a `test/commands` key to check CLI.
 #   # List all the packages/modules that `run_test.py` imports.
