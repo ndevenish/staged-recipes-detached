@@ -31,7 +31,7 @@ _build/tests/evparse4
 _build/tests/evparse5
 _build/tests/evparse6
 _build/tests/evparse7
-_build/tests/symop_pars
+_build/tests/symop_parse
 _build/tests/stream_read crystfel/tests/test.stream
 _build/tests/integration_check
 _build/tests/prof2d_check
