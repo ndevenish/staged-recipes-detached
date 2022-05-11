@@ -47,7 +47,7 @@ test:
   source_files:
     - _build/
   commands:
-    - ninja -C -build
+    - ninja -C _build
   requires:
     - ninja
 
